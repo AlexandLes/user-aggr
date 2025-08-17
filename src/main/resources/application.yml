@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    db1:
+      jdbc-url: jdbc:postgresql://postgres-db1:5432/testdb1
+      username: testuser
+      password: testpass
+      driver-class-name: org.postgresql.Driver
+    db2:
+      jdbc-url: jdbc:postgresql://postgres-db2:5432/testdb2
+      username: testuser
+      password: testpass
+      driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+data-sources:
+  - name: db1
+    strategy: postgres
+    table: users
+    mapping:
+      id: user_id
+      username: login
+      name: first_name
+      surname: last_name
+  - name: db2
+    strategy: postgres
+    table: user_table
+    mapping:
+      id: ldap_login
+      username: ldap_login
+      name: name
+      surname: surname
