@@ -20,10 +20,10 @@ public class UserService {
         this.db2Repository = db2Repository;
     }
 
-    public List<UserDto> getAllUsers() {
+    public List<UserDto> getAllUsers(String id, String username) {
         List<UserDto> result = new ArrayList<>();
-        result.addAll(db1Repository.findAll());
-        result.addAll(db2Repository.findAll());
+        result.addAll(db1Repository.findAll(id, username));
+        result.addAll(db2Repository.findAll(id, username));
         return result;
     }
 }

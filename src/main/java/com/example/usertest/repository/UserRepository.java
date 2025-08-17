@@ -5,5 +5,5 @@ import com.example.usertest.dto.UserDto;
 import java.util.List;
 
 public interface UserRepository {
-    List<UserDto> findAll();
+    List<UserDto> findAll(String idFilter, String usernameFilter);
 }
